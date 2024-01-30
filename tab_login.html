@@ -34,6 +34,7 @@
     </main>
     <script>
         //시험 조건에 대한 답을 여기 작성하세요.
+        // 첫번째 문제
         const tab = document.querySelectorAll('.tab')
         const tab_c = document.querySelectorAll('.tab_c')
         console.log(tab, tab_c)
@@ -56,6 +57,24 @@
             tab_c[0].classList.remove('active')
             tab_c[1].classList.add('active')
         })
+        // 두번째 문제
+        const idInput = document.querySelector('#id')
+        const pwInput = document.querySelector('#pw')
+        const error = document.querySelector('.error')
+        const loginBtn = document.querySelector('#login')
+        console.log(idInput, pwInput, error, loginBtn)
+
+        loginBtn.addEventListener('click', ()=>{
+            if(pwInput.value == '' && idInput.value == ''){
+                error.innerText = '아이디와 비밀번호를 입력하세요'
+            }else if(pwInput.value == ''){
+                error.innerText = '비밀번호를 입력하세요'
+            }else if(idInput.value == ''){
+                error.innerText = '아이디를 입력하세요'
+            }else{
+                alert('로그인에 성공하였습니다.')
+            }
+            })
     </script>
 </body>
 </html>
